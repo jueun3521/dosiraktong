@@ -1,4 +1,6 @@
 window.onload = function () {
+    // AOS 세팅
+    AOS.init();
     // 상단 스크롤 기능
     const header = document.querySelector(".header");
     const mbt = document.querySelector(".mbt");
@@ -131,5 +133,11 @@ window.onload = function () {
         item.classList.remove("active");
         }
     });
+    });
+    // li태그를 클릭을 하면 처리하기
+    swVisualPgLi.forEach(function (item, index) {
+        item.addEventListener("click", function () {
+            swiper.slideToLoop(index, 500, false)
+        });
     });
 };

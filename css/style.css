@@ -272,7 +272,7 @@ transition: opacity 1s, transform 1s;
 transform: translateX(0);
 opacity: 1;
 }
-.sw-visual .swiper-slide .visual-box p {
+.sw-visual .swiper-slide, .visual-box p {
 transition: opacity 1s 0.5s, transform 1s 0.5s;
 transform: translateY(0);
 opacity: 1;
@@ -336,6 +336,7 @@ left: 50%;
 transform: translateX(-50%);
 top: calc(50% + 230px);
 width: 100%;
+max-width: 1420px;
 z-index: 9;
 }
 .sw-visual-pg-list {
@@ -345,6 +346,7 @@ display: flex;
 .sw-visual-pg-list > li {
 position: relative;
 width: 85px;
+font-size: 14px;
 padding: 10px 10px;
 color: #fff;
 font-weight: 400;
