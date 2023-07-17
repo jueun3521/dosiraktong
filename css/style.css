@@ -32,6 +32,13 @@ word-break: keep-all;
 background-color: rgb(202, 236, 225);
 height: 5000px;
 }
+.inner{
+    display: block;
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
 /* 레이아웃 */
 .wrap {
 position: relative;
@@ -267,12 +274,12 @@ opacity: 0;
 transform: translateY(30px);
 }
 /* 포커스된 슬라이드 */
-.sw-visual .swiper-slide .visual-box h2 {
+.sw-visual .swiper-slide-active .visual-box h2 {
 transition: opacity 1s, transform 1s;
 transform: translateX(0);
 opacity: 1;
 }
-.sw-visual .swiper-slide, .visual-box p {
+.sw-visual .swiper-slide-active .visual-box p {
 transition: opacity 1s 0.5s, transform 1s 0.5s;
 transform: translateY(0);
 opacity: 1;
@@ -375,3 +382,188 @@ background-color: #fff;
 transition: width 1.5s;
 width: 100% !important;
 }
+
+/* 서비스 */
+.service {
+    position: relative;
+    display: block;
+    height: 100vh;
+    min-height: 800px;
+    padding: 180px 0 210px;
+}
+.service .inner {
+    height: 100%;
+}
+.service-title {
+    font-family: "Godo", "notokr";
+    margin-bottom: 30px;
+    font-size: 38px;
+    text-align: center;
+}
+.service-title span {
+    color: #3a68b2;
+}
+.service-wrap {
+    width: calc(100% - 20px * 2);
+    background-color: azure;
+    margin: 0 auto;
+    max-width: 1420px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 20px;
+}
+.service-box-1 {
+    position: relative;
+    display: block;
+    /* 700 / 1420 * 100 = 49.25957vw */
+    height: 49.25957vw;
+    max-height: 680px;
+    overflow: hidden;
+    grid-row: 1/3;
+}
+.service-box-1:hover .service-bg {
+    transform: rotate(2deg) scale(1.1);
+    opacity: 0.9;
+}
+.service-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.service-bg-1 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/main_service_img1.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.5s;
+}
+.service-box-2 {
+    position: relative;
+    overflow: hidden;
+}
+.service-box-2:hover .service-bg {
+    transform: rotate(2deg) scale(1.1);
+    opacity: 0.9;
+}
+.service-bg-2 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/main_service_img2.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.5s;
+}
+.service-box-3 {
+    position: relative;
+    overflow: hidden;
+}
+.service-box-3:hover .service-bg {
+    transform: rotate(2deg) scale(1.1);
+    opacity: 0.9;
+}
+.service-bg-3 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/main_service_img3.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+.service-wrap a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: grid;
+    padding: 30px;
+}
+.service-box-wrap{
+    position: relative;
+    color:  #fff;
+    justify-self: start;
+    align-self: end;
+    /* z-index: 9999; */
+}
+.service-box-title{
+    position: relative;
+    font-size: 26px;
+    margin-bottom: 3px;
+}
+.service-box-desc{
+    font-size: 17px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+.no-br{
+    display: none;
+}
+.service-box-bt{
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 140px;
+    height: 40px;
+    padding: 0 15px 0 20px;
+    margin-top: 20px;
+    font-size: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+}
+.service-box-bt i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50% );
+}
+@media screen (andmax-width: 1280px) {;
+    .service{
+        height: auto;
+        padding: 120px 0 80px;
+    }
+}
+@media screen (andmax-width: 1040px) {;
+    .service-title{
+        font-size: 30px;
+        white-space: nowrap;
+    }
+    .service-wrap{
+        grid-template-columns: 1fr;
+    }
+    .service-box-1{
+        justify-self: center;
+        width: 100%;
+        height: 640px;
+        max-width: 640px;
+    }
+    .service-box-2,
+    .service-box-3{
+        justify-self: center;
+        width: 100%;
+        height: 320px;
+        max-width: 640px;
+    }
+}
+@media screen (andmax-width: 640px) {
+    .service{
+        padding: 70px 0 80px;
+    }
+    .service-box-1{
+        height:  100vw;
+        max-width: 640px;
+    }
+    .service-box-2,
+    .service-box-3{
+        height: 45vw;
+        max-height: 312px;
+    }
+    .service-wrap a{
+        padding-bottom: 60px;
+        
+    }
+} 
